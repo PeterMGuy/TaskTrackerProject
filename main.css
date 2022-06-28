@@ -1,0 +1,181 @@
+/* predefined colors */
+:root {
+    --dark:#374151;
+    --darker:#1F2937;
+    --darkest:#111827;
+    --gray:#687280;
+    --light:#EEE;
+    --pink:#EC4899;
+    --purple:#8B5Cf6;
+}
+
+/* Font type, remove extra white space*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* reduces size of "What is your plan?", centers title, page background color */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--dark);
+    color: #fff;
+}
+
+/* centers (Task Tracker List, user task input, and Add task) */
+header {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Task Tracker List padding below and font properties */
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--light);
+    margin-bottom: 1rem;
+}
+
+/* task tracker list */
+#new-task-form {
+    display: flex;
+}
+
+/* removes any predefined css traits of whole body  */
+input, button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+/* user input area(What is your plan?) for tasks */
+#new-task-input {
+    flex: 1 1 0%;
+    background-color: var(--darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--light);
+    font-size: 1.25rem;
+}
+
+/* placeholder for user task list input */
+#new-task-input ::placeholder {
+    color: var(--gray);
+}
+
+/* submit (Add task) button */
+#new-task-submit {
+    color: var(--pink);
+    font-size: 1.25rem;
+    font-weight: 700;
+    background: linear-gradient(to right, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+/* hovering over (Add task) button shifts opacity */
+#new-task-submit:hover {
+    opacity: 0.8;
+}
+
+/* clicking submit (Add task) button shifts opacity */
+#new-task-submit:active {
+    opacity: 0.6;
+}
+
+/* container for the list of user tasks */
+main {
+    flex: 1 1 0%;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Tasks padding left */
+.task-list {
+    padding: 1rem;
+}
+
+/* Tasks padding below and font properties */
+.task-list h2 {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--light);
+    margin-bottom: 1rem;
+}
+
+/* Values under (Tasks) properties */
+#tasks .task {
+    display: flex;
+    justify-content: space-between;
+    background: var(--darkest);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* flex for user (Tasks) content */
+#tasks .task .content {
+    flex: 1 1 0%;
+}
+
+/* Tasks (My task) properties */
+#tasks .task .content .text {
+    color: var(--light);
+    font-size: 1.125rem;
+    width: 100%;
+    display: block;
+    transition: 0.4s;
+}
+
+/* If (readonly) in index.html line 41 is removed, (My task) is displayed with color pink */
+#tasks .task .content .text:not(:read-only) {
+    color: var(--pink);
+}
+
+/* Tasks (Edit) & (Delete) margin size and flex */
+#tasks .task .actions {
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+/* Tasks (Edit) & (Delete) properties */
+.task .actions button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+/* hovering over (Edit & Delete) button shifts opacity */
+.task .actions button:hover {
+    opacity: 0.8;
+}
+
+/* clicking submit (Edit & Delete) button shifts opacity */
+.task .actions button:active {
+    opacity: 0.6;
+}
+
+/* (Edit) button color */
+.task .actions .edit {
+    background: linear-gradient(to right, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* (Delete) button color */
+.task .actions .delete {
+    color: crimson;
+}
+
